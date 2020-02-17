@@ -5,9 +5,9 @@
  *  接続パスワード：admin123
  */ 
 drop database if exists hoteldb;
-drop user if exists hoteldb_admin@localhost;
+drop user if exists hoteldb_admin;
 create database hoteldb character set utf8;
-grant all privileges on hoteldb.* to 'hoteldb_admin'@'localhost' identified by 'admin123';
+grant all privileges on hoteldb.* to 'hoteldb_admin' identified by 'admin177';
 
 use hoteldb;
 
@@ -19,7 +19,7 @@ create table hotels (
   city    varchar(20) not null,  /* 所在地情報のうち市区町村名の部分：例）新座市 */
   address varchar(100) not null, /* 所在地情報のうち都道府県名と市区町村名を除いた部分：例）東北2-33-10 */
   memo    text,                  /* 詳細情報 */
-	image   varchar(10) not null,  /* 画像ファイル名：画像ファイルはimgaeディレクトリ内に格納されている */
+  image   varchar(10) not null,  /* 画像ファイル名：画像ファイルはimgaeディレクトリ内に格納されている */
   Primary Key (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
